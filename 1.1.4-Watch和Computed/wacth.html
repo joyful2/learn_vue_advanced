@@ -7,25 +7,29 @@
 </head>
    <body>
       <div id = "computed_props">
-         千米 : <input type = "text" v-model = "kilometers">
+          千米 : <input type = "text" v-model = "kilometers">
          米 : <input type = "text" v-model = "meters">
       </div>
 	   <p id="info"></p>
       <script type = "text/javascript">
          var vm = new Vue({
             el: '#computed_props',
+            // template:<h2>test template</h2>  ,
+            // render(){
+            //    <h2>test render</h2>
+            // },
             data: {
-               kilometers : 0,
+               kilometers : 10,
                meters:0
             },
             watch : {
                kilometers:function(val) {
-                  this.kilometers = val;
+                  // this.kilometers = val;
                   this.meters = this.kilometers * 1000
                },
                meters : function (val) {
                   this.kilometers = val/ 1000;
-                  this.meters = val;
+                  // this.meters = val;
                }
             }
          });
