@@ -7,10 +7,14 @@
 </head>
 <body>
     <div id="app1">
+        <!-- 3.使用 -->
         <my-com></my-com>
         <my-com1></my-com1>
+         <Extend-Com></Extend-Com>
+
     </div>
  
+    <!-- 1. 创建 -->
     <template id="myCom">
         <div>这是template标签构建的组件</div>
     </template>
@@ -18,18 +22,28 @@
     <script type="text/x-template" id="myCom1">
         <div>这是script标签构建的组件</div>
     </script>
+
  
-    <script>
+ 
+    <script> 
+        const extendCom = Vue.extend({ 
+             template: '<div>这是Vue.extend创建的全局组件</div>'
+        });
+
+         //   2.注册 
         Vue.component('my-com1',{ //全局注册
             template: '#myCom1'
         });
+        Vue.component('extendCom',extendCom);//全局注册
+      
  
         var app1 = new Vue({
             el: '#app1',
             components:{
                 'my-com':{
                     template: '#myCom'  //局部注册
-                }
+                },
+     
             }
         });
     </script>
