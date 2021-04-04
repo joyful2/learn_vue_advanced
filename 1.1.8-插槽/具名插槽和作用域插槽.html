@@ -10,21 +10,32 @@
 <body>
   <div id="app">
     <!--父组件-->
-    <template>
+    
       <!-- 具名slot -->
       <v-two>
             <p slot="nav">我是导航</p>
             <p slot="main">我是内容</p>
-            <p slot="footer">我是底部</p>
+            <!-- <p slot="footer">我是底部</p> -->
+
+
+            <template slot="footer" scope='props'>
+              ===============
+              <p>{{props.text}}</p>
+              ----------
+             </template>
+
+             
+             
       </v-two>
       
-    </template>  
+   
   </div>
 
   <!-- 具名slot -->
   <template id="two">
     <div>
       <nav>
+ 
         <slot name="nav"></slot>
       </nav>
 
@@ -33,7 +44,10 @@
       </main>
 
       <footer>
-        <slot name="footer"></slot>
+        <!-- <slot name="footer"></slot> -->
+        <slot name="footer" text="two"></slot>
+ 
+          
       </footer>
 
     </div>

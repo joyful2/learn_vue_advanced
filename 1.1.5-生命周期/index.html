@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <title>1.1.5</title>
 </head>
+
 <body>
- 
+
     <script type="text/javascript">
         window.onload = function() {
             window.vm = new Vue({
                 el: '#app',
                 data: {
                     myText: '我是生命周期！',
-                    myText2:'测试会不会重渲染'
+                    myText2: '测试会不会重渲染'
                 },
-                beforeCreate () {
+                beforeCreate() {
                     console.log('==============' + 'beforeCreated' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
-               
+
                 },
-                created () {
+                created() {
                     console.log('==============' + 'created' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
                 },
-                beforeMount () {
+                beforeMount() {
                     console.log('==============' + 'beforeMount' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
 
                 },
-                mounted () {
+                mounted() {
                     console.log('==============' + 'mounted' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
                 },
-                beforeUpdate () {
+                beforeUpdate() {
                     console.log('==============' + 'beforeUpdate' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
 
                 },
-                updated () {
+                updated() {
                     console.log('==============' + 'updated' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
-  
+
                 },
-                beforeDestroy () {
+                beforeDestroy() {
                     console.log('==============' + 'beforeDestroy' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
+
                     alert('确定离开？')
-      
+ 
                 },
-                destroyed () {
+                destroyed() {
                     console.log('==============' + 'destroyed' + '===================')
                     console.log(this.$el)
                     console.log(this.$data)
-      
-                } 
+
+                }
             })
-            
-         
+
+
         }
+    </script>
 
-    </script> 
+    <div id="app">
+        <input type="text" v-model="myText">{{myText}}
 
-<div id="app">
-    <input type="text" v-model="myText">{{myText}}
-  
- </div>
+    </div>
 
 
 </body>
+
 </html>

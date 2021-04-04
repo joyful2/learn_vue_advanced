@@ -19,7 +19,9 @@
           <template scope="props"> 
                 <!-- 直接显示 -->
               <p>{{props.text}}</p>
+ 
           </template> 
+ 
 
       </v-three>
 
@@ -34,7 +36,7 @@
   <template id="three">
     <div>
         <!-- 把数据传递给slot,这样父组件也可以访问three这个组件的数据 -->
-      <slot :text="three"></slot>
+      <slot :text="three"  ></slot>
     </div>
   </template>
   
