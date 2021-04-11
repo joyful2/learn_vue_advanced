@@ -8,7 +8,7 @@
 <script>
 export default {
   name: 'about',
-  props:['agrs'],
+  props:['agrs'],  // todo: 不需要$router.params就能拿到?
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'

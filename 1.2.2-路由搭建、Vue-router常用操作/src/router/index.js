@@ -11,43 +11,39 @@ import Regist from '../components/Regist.vue'
 Vue.use(Router)
 
 export default new Router({
-  //路由地址都是以"#"形式展示，但是有些时候，我们又希望路由地址中不出现"#"，那怎么办呢？
-  mode:'history',
-  routes: [
-    {
-      path: '/', 
-      name: 'Home',
-      component:Home
-    },
-    {
-      path: '/News', 
-      name: 'News',
-      component:News
-    },
-    {
-      path: '/Shequ/:id',
-       //Shequ/a  	$route.params = {id="a"}
-      name: 'Shequ',
-      component:Shequ
-    },
-    {
-      path: '/About/:agrs', 
-      props:true,
-      component:About
-    },
-    {
-      path: '/Login', 
-      name: 'Login',
-      component:Login
-    },
-    {
-      path: '/Regist', 
-      name: 'Regist',
-      component:Regist
-    },
-  ]
+    //路由地址都是以"#"形式展示，但是有些时候，我们又希望路由地址中不出现"#"，那怎么办呢？
+    mode: 'history', // todo: try
+    routes: [{
+            path: '/',
+            name: 'Home',
+            component: Home
+        },
+        {
+            path: '/News',
+            name: 'News',
+            component: News
+        },
+        {
+            path: '/Shequ/:id',
+            //Shequ/a  	$route.params = {id="a"}
+            name: 'Shequ',
+            component: Shequ
+        },
+        {
+            path: '/About/:agrs',
+            props: true,
+            component: About
+        },
+        {
+            path: '/Login',
+            name: 'Login',
+            component: Login
+        },
+        {
+            path: '/Regist',
+            name: 'Regist',
+            component: Regist
+        },
+    ]
 
 })
-
-
-

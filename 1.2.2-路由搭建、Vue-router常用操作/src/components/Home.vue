@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'Home', // todo: 这个name有啥用？
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
