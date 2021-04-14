@@ -27,7 +27,7 @@ router.beforeEach((to, from, next) => {
 
     // 未登录状态；当路由到nextRoute指定页时，跳转至login
     if (shouldLoginRoute.indexOf(to.name) >= 0) {
-        守卫的逻辑
+        // 守卫的逻辑
         if (!isLogin) {
             router.push({ name: 'Login' })
         }
